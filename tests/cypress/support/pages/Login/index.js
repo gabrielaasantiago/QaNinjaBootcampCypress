@@ -1,6 +1,10 @@
-
+import modal from '../components/Modal'
 
 class LoginPage {
+
+    constructor() {
+        this.modal = modal
+    }
 
     go() {
         cy.visit('/') 

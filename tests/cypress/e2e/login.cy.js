@@ -1,4 +1,5 @@
 import loginPage from '../support/pages/Login'
+import mapPage from '../support/pages/Map'
 
 describe('Login', () => {
   
@@ -13,6 +14,9 @@ describe('Login', () => {
     loginPage.go()
     loginPage.form(user)
     loginPage.submit()
+
+    mapPage.loggedUser(user.name)
+    
   })
 
 
@@ -23,8 +27,12 @@ describe('Login', () => {
       password: '123abc'
     }
 
-    cy.login(user)
-    cy.modalHaveText('Credenciais inválidas, tente novamente!')   
+    loginPage.go()
+    loginPage.form(user)
+    loginPage.submit()
+
+    loginPage.modal.haveText('Credenciais inválidas, tente novamente!')
+
   })
 
 
@@ -35,8 +43,11 @@ describe('Login', () => {
       password: '123abc'
     }
 
-    cy.login(user)
-    cy.modalHaveText('Credenciais inválidas, tente novamente!')    
+    loginPage.go()
+    loginPage.form(user)
+    loginPage.submit()
+
+    loginPage.modal.haveText('Credenciais inválidas, tente novamente!')    
   })
 
   it('instagram deve ser obrigatório', () => {
@@ -44,8 +55,11 @@ describe('Login', () => {
       password: 'Theo2020'
     }
 
-    cy.login(user)
-    cy.modalHaveText('Por favor, informe o seu código do Instagram!')
+    loginPage.go()
+    loginPage.form(user)
+    loginPage.submit()
+
+    loginPage.modal.haveText('Por favor, informe o seu código do Instagram!')
   })
 
   it('senha deve ser obrigatória', () => {
@@ -53,15 +67,20 @@ describe('Login', () => {
       instagram: '@gabi.santiago'
     }
 
-    cy.login(user)
-    cy.modalHaveText('Por favor, informe a sua senha secreta!')
+    loginPage.go()
+    loginPage.form(user)
+    loginPage.submit()
+
+    loginPage.modal.haveText('Por favor, informe a sua senha secreta!')
   })
 
   it('todos os campos devem ser obrigatórios', () => {
     const user = {}
 
-    cy.login(user)
-    cy.modalHaveText('Por favor, informe suas credenciais!')
+    loginPage.go()
+    loginPage.submit()
+
+    loginPage.modal.haveText('Por favor, informe suas credenciais!')
   })
 
 })
