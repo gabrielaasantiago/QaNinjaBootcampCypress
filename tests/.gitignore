@@ -3,6 +3,12 @@
 # dependencies
 /node_modules
 node_modules
+/node_modules/*
+/node_modules/debug
+/node_modules/
+/node_modules/@types
+../node_modules/
+../../node_modules
 /.pnp
 .pnp.js
 
@@ -30,5 +36,4 @@ yarn-error.log*
 
 # others
 /uploads/*
-/node_modules/*
-/node_modules/@types
+
