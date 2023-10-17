@@ -3,9 +3,12 @@
 class MapPage {
 
     loggedUser(name) {
+
+        const firstName = name.split(' ')
+
         cy.get('.logged-user')
         .should('be.visible')
-        .should('have.text', `Olá, ${name}`)
+        .should('have.text', `Olá, ${firstName[0]}`)
     }
 
     createLink() {
