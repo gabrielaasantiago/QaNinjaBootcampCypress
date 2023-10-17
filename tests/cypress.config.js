@@ -1,12 +1,17 @@
 const { defineConfig } = require('cypress')
 const { cypressBrowserPermissionsPlugin } = require('cypress-browser-permissions')
+const allureWriter = require('@shelex/cypress-allure-plugin/writer')
+
 const mongo = require('cypress-mongodb')
 require('dotenv').config()
 
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
+
+      allureWriter(on, config)
       mongo.configurePlugin(on)
+
       config = cypressBrowserPermissionsPlugin(on, config)
       
       return config
@@ -17,6 +22,7 @@ module.exports = defineConfig({
     viewportHeight: 1080,
 
     env: {
+      alure: true,
       browserPermissions: {
         notifications: 'allow',
         geolocation: 'allow'

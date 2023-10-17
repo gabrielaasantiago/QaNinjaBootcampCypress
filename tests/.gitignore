@@ -40,3 +40,7 @@ yarn-error.log*
 downloads
 /downloads
 
+videos
+screenshots
+node_modules
+tests/node_modules

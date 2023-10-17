@@ -39,6 +39,25 @@
     "debug" "^3.1.0"
     "lodash.once" "^4.1.1"
 
+"@shelex/allure-js-commons-browser@1.4.1":
+  "integrity" "sha512-8cImusrmhPU4Ic9IT2416sg6dnxKgjE3ftCdnebU5WlLsEhEQ7Iz1i80jJeIyJAz3mDO5eXFkNmFFS7rll6VFA=="
+  "resolved" "https://registry.npmjs.org/@shelex/allure-js-commons-browser/-/allure-js-commons-browser-1.4.1.tgz"
+  "version" "1.4.1"
+  dependencies:
+    "uuid" "9.0.0"
+
+"@shelex/cypress-allure-plugin@^2.40.0":
+  "integrity" "sha512-/WEd51ggYscxjQgQpgEvW33zkqUc6FIMct2SM12mAxqiiKtXNXc0isX5eTNbmrttWCypgTHKJFsRtc3vfMemPw=="
+  "resolved" "https://registry.npmjs.org/@shelex/cypress-allure-plugin/-/cypress-allure-plugin-2.40.0.tgz"
+  "version" "2.40.0"
+  dependencies:
+    "@shelex/allure-js-commons-browser" "1.4.1"
+    "crypto-js" "4.1.1"
+    "debug" "4.3.4"
+    "object-inspect" "1.12.3"
+    "path-browserify" "1.0.1"
+    "uuid" "9.0.0"
+
 "@types/node@*":
   "integrity" "sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-20.3.1.tgz"
@@ -86,6 +105,11 @@
   dependencies:
     "clean-stack" "^2.0.0"
     "indent-string" "^4.0.0"
+
+"allure-commandline@^2.24.1":
+  "integrity" "sha512-eNto3ipBq+O2B/f8/OwiS3E8R7jYENs3qv8jT7wMZmziYLANsISC9tX/FfEqR3FDiQlEOjkP7iyTEZ3ph53FPg=="
+  "resolved" "https://registry.npmjs.org/allure-commandline/-/allure-commandline-2.24.1.tgz"
+  "version" "2.24.1"
 
 "ansi-colors@^4.1.1":
   "integrity" "sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw=="
@@ -331,6 +355,11 @@
     "shebang-command" "^2.0.0"
     "which" "^2.0.1"
 
+"crypto-js@4.1.1":
+  "integrity" "sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw=="
+  "resolved" "https://registry.npmjs.org/crypto-js/-/crypto-js-4.1.1.tgz"
+  "version" "4.1.1"
+
 "cypress-browser-permissions@^1.1.0":
   "integrity" "sha512-/pLwCWIXqcmWga3LQmLUDplGCT+e490H8CeqztIXwy8bsMCK4EHTuoRgTcNwYGipdb00omgTfby7jIDPp2a01Q=="
   "resolved" "https://registry.npmjs.org/cypress-browser-permissions/-/cypress-browser-permissions-1.1.0.tgz"
@@ -412,7 +441,7 @@
   dependencies:
     "ms" "^2.1.1"
 
-"debug@^4.1.1", "debug@^4.3.4":
+"debug@^4.1.1", "debug@^4.3.4", "debug@4.3.4":
   "integrity" "sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ=="
   "resolved" "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
   "version" "4.3.4"
@@ -905,7 +934,7 @@
   dependencies:
     "path-key" "^3.0.0"
 
-"object-inspect@^1.9.0":
+"object-inspect@^1.9.0", "object-inspect@1.12.3":
   "integrity" "sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g=="
   "resolved" "https://registry.npmjs.org/object-inspect/-/object-inspect-1.12.3.tgz"
   "version" "1.12.3"
@@ -935,6 +964,11 @@
   "version" "4.0.0"
   dependencies:
     "aggregate-error" "^3.0.0"
+
+"path-browserify@1.0.1":
+  "integrity" "sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g=="
+  "resolved" "https://registry.npmjs.org/path-browserify/-/path-browserify-1.0.1.tgz"
+  "version" "1.0.1"
 
 "path-is-absolute@^1.0.0":
   "integrity" "sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg=="
@@ -1236,6 +1270,11 @@
   "integrity" "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   "version" "8.3.2"
+
+"uuid@9.0.0":
+  "integrity" "sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg=="
+  "resolved" "https://registry.npmjs.org/uuid/-/uuid-9.0.0.tgz"
+  "version" "9.0.0"
 
 "verror@1.10.0":
   "integrity" "sha512-ZZKSmDAEFOijERBLkmYfJ+vmk3w+7hOLYDNkRCuRuMJGEmqYNCNLyBBFwWKVMhfwaEF3WOd0Zlw86U/WC/+nYw=="

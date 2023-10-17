@@ -9,7 +9,7 @@ describe('Login', () => {
     })
   })
 
-  it('deve logar com sucesso', function() {
+  it.only('deve logar com sucesso', function() {
 
       const user = this.users.success
 
