@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "Projeto de testes de ponta a ponta na web app Qtruck",
   "main": "index.js",
+  "scripts": {
+    "chrome": "cypress run --browser chrome"
+  },
   "author": "Gabriela Santiago",
   "license": "MIT",
   "devDependencies": {
     "cypress": "^12.15.0",
-    "cypress-browser-permissions": "^1.1.0"
+    "cypress-browser-permissions": "^1.1.0",
+    "cypress-tesults-reporter": "^1.4.1"
   },
   "dependencies": {
     "dotenv": "^16.3.1"

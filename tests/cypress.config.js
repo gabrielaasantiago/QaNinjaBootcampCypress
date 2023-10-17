@@ -17,8 +17,7 @@ module.exports = defineConfig({
     viewportHeight: 1080,
 
     env: {
-      alure: true,
-      browserPermissions: {
+        browserPermissions: {
         notifications: 'allow',
         geolocation: 'allow'
       }
