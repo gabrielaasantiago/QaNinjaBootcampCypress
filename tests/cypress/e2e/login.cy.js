@@ -1,19 +1,19 @@
 import loginPage from '../support/pages/Login'
 import mapPage from '../support/pages/Map'
 
-//import users from '../fixtures/login-users.json'
+import users from '../fixtures/login-users.json'
 
 describe('Login', () => {
   
-  before(() => {
-    cy.fixture('login-users').then(function (users) {
-      this.users = users
-    })
-  })
+  // before(() => {
+  //   cy.fixture('login-users').then(function (users) {
+  //     this.users = users
+  //   })
+  // })
 
-  it.only('deve logar com sucesso', function(){
+  it.only('deve logar com sucesso', () => {
 
-    const user = this.users.success
+    const user = users.success
 
     cy.apiCreateUser(user)
 
