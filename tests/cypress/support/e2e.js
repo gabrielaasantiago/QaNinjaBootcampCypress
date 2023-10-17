@@ -13,12 +13,10 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import '@shelex/cypress-allure-plugin'
+
 // Import commands.js using ES2015 syntax:
 import './commands'
 
-const mongo = require('cypress-mongodb')
-mongo.addCommands()
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

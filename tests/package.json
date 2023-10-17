@@ -6,13 +6,10 @@
   "author": "Gabriela Santiago",
   "license": "MIT",
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.40.0",
     "cypress": "^12.15.0",
-    "cypress-browser-permissions": "^1.1.0",
-    "cypress-mongodb": "^5.5.0"
+    "cypress-browser-permissions": "^1.1.0"
   },
   "dependencies": {
-    "allure-commandline": "^2.24.1",
     "dotenv": "^16.3.1"
   }
 }
