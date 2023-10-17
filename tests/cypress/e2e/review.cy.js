@@ -5,35 +5,18 @@ describe('Avaliações', () => {
 
     it('deve enviar uma nova avaliação', () => {
 
-        const user = {
-            name: 'Madruga Ramon',
-            instagram: '@madruguinha',
-            password: 'gatinholevado'
-        }
+        cy.fixture('review').as('userReview')
 
-        const foodtruck = {
-            latitude: '-20.913386666390924',
-            longitude: '-44.50958490371705',
-            name: `Renata's FoodTruck`,
-            details: 'A melhor cachaça da cidade ao som das melhores músicas que irá curtir!',
-            opening_hours: 'De 19h às 03h',
-            open_on_weekends: true
-        }
+        cy.get('@userReview').then((data) => {
+            cy.apiCreateUser(data.user)
+            cy.apiLogin(data.user)
+            cy.apiCreateFoodTruck(data.foodtruck)
 
-        const review = {
-            comment: 'A experiência de ouvir vinil foi muito legal!',
-            stars: 4
-        }
+            cy.uiLogin(data.user)
 
-        cy.apiCreateUser(user)
-        cy.apiLogin(user)
-        cy.apiCreateFoodTruck(foodtruck)
-
-        cy.uiLogin(user)
-
-        mapPage.goToFoodTruck(foodtruck.name)
-        foodTruckPage.addReview(review)
-        foodTruckPage.reviewShouldBe(user, review)
-        
+            mapPage.goToFoodTruck(data.foodtruck.name)
+            foodTruckPage.addReview(data.review)
+            foodTruckPage.reviewShouldBe(data.user, data.review)
+        })       
     })
 })
