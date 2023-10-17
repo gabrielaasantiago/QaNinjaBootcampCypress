@@ -1,15 +1,21 @@
 import loginPage from '../support/pages/Login'
 import mapPage from '../support/pages/Map'
 
+//import users from '../fixtures/login-users.json'
+
 describe('Login', () => {
   
-  it('deve logar com sucesso', () => {
+  before(() => {
+    cy.fixture('login-users').then(function (users) {
+      this.users = users
+    })
+  })
 
-    const user = {
-      name: 'Gabriela',
-      instagram: '@gabi.santiago',
-      password: 'Theo2020'
-    }
+  it.only('deve logar com sucesso', function(){
+
+    const user = this.users.success
+
+    cy.apiCreateUser(user)
 
     loginPage.go()
     loginPage.form(user)

@@ -1,4 +1,5 @@
-
+import mapPage from "../support/pages/Map"
+import foodTruckPage from "../support/pages/Foodtruck"
 
 describe('Avaliações', () => {
 
@@ -19,34 +20,20 @@ describe('Avaliações', () => {
             open_on_weekends: true
         }
 
+        const review = {
+            comment: 'A experiência de ouvir vinil foi muito legal!',
+            stars: 4
+        }
+
         cy.apiCreateUser(user)
         cy.apiLogin(user)
         cy.apiCreateFoodTruck(foodtruck)
 
         cy.uiLogin(user)
 
-        cy.get('.leaflet-marker-pane img').as('mapList')
-
-        cy.get('@mapList').each((element, index, list) => {
-
-            cy.get('@mapList')
-                .eq(index)
-                .click({force: true})
-            cy.wait(1000)
-
-            cy.get('.leaflet-popup-content').as('ftName')
-
-            cy.get('@ftName')
-                .invoke('text')
-                .then((txt) => {
-                    cy.log(txt)
-                    if (txt === foodtruck.name) {
-                        cy.get('@ftName').find('a').click()
-                        return false
-                    }
-                })
-        })
-
-
+        mapPage.goToFoodTruck(foodtruck.name)
+        foodTruckPage.addReview(review)
+        foodTruckPage.reviewShouldBe(user, review)
+        
     })
 })
