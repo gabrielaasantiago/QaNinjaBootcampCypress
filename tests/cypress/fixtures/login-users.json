@@ -3,5 +3,19 @@
         "name": "Santiago",
         "instagram": "@7avos",
         "password": "Theo2020"
+    },
+    "inv_pass": {
+        "instagram": "@gabi.santiago",
+        "password": "123abc"
+    },
+    "not_found": {
+        "instagram": "@not.found",
+        "password": "123abc"
+    },
+    "required_insta": {
+        "password": "Theo2020"
+    },
+    "required_pass": {
+        "instagram": "@gabi.santiago"
     }
 }

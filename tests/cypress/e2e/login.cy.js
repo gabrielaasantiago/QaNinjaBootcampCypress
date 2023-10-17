@@ -3,13 +3,13 @@ import mapPage from '../support/pages/Map'
 
 describe('Login', () => {
   
-  before(() => {
+  beforeEach(() => {
     cy.fixture('login-users').then(function (users) {
       this.users = users
     })
   })
 
-  it.only('deve logar com sucesso', function() {
+  it('deve logar com sucesso', function() {
 
       const user = this.users.success
 
@@ -23,12 +23,9 @@ describe('Login', () => {
   })
 
 
-  it('não deve logar com senha incorreta', () => { 
+  it('não deve logar com senha incorreta', function() { 
 
-    const user = {
-      instagram: '@gabi.santiago',
-      password: '123abc'
-    }
+    const user = this.users.inv_pass
 
     loginPage.go()
     loginPage.form(user)
@@ -39,12 +36,9 @@ describe('Login', () => {
   })
 
 
-  it('não deve logar com instagram inexistente', () => {
+  it('não deve logar com instagram inexistente', function(){
 
-    const user = {
-      instagram: '@santiago.gabi',
-      password: '123abc'
-    }
+    const user = this.users.not_found
 
     loginPage.go()
     loginPage.form(user)
@@ -53,10 +47,8 @@ describe('Login', () => {
     loginPage.modal.haveText('Credenciais inválidas, tente novamente!')    
   })
 
-  it('instagram deve ser obrigatório', () => {
-    const user = {
-      password: 'Theo2020'
-    }
+  it('instagram deve ser obrigatório', function () {
+    const user = this.users.required_insta
 
     loginPage.go()
     loginPage.form(user)
@@ -65,10 +57,8 @@ describe('Login', () => {
     loginPage.modal.haveText('Por favor, informe o seu código do Instagram!')
   })
 
-  it('senha deve ser obrigatória', () => {
-    const user = {
-      instagram: '@gabi.santiago'
-    }
+  it('senha deve ser obrigatória', function () {
+    const user = this.users.required_pass
 
     loginPage.go()
     loginPage.form(user)
@@ -77,7 +67,7 @@ describe('Login', () => {
     loginPage.modal.haveText('Por favor, informe a sua senha secreta!')
   })
 
-  it('todos os campos devem ser obrigatórios', () => {
+  it('todos os campos devem ser obrigatórios', function () {
     const user = {}
 
     loginPage.go()
